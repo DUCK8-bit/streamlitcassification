@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  fashion-classifier:
+    build: .
+    container_name: fashion-app
+    ports:
+      - "8501:8501"  # Fashion Classifier
+      - "8080:8080"  # Metrics
+      - "8503:8503"  # Metrics Dashboard
+      - "8504:8504"  # Results Dashboard
+    restart: unless-stopped 
